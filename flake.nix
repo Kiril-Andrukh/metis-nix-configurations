@@ -9,15 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    metis = {
-      url = "git+ssh://git@github.com/MIT-Systems-Integration-Development/metis?ref=main";
-      flake = false;
+    sops-nix = {
+      url = "github:mic92/sops-nix";
     };
-
-    sops-nix.url = "github:mic92/sops-nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, metis, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       pkgs = import nixpkgs { 
         system = "x86_64-linux"; 
@@ -38,9 +35,9 @@
 
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs metis; };
+          specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/nixos/configuration.nix
+            ./hosts/nixos/configuration.nix  
           ];
         };
       };

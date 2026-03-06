@@ -20,23 +20,6 @@
         "type": "github"
       }
     },
-    "metis": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1772181935,
-        "narHash": "sha256-GBEoDfNI12HTR5HG/Eo4ns3MSc8adINNhF0vrfaAxJY=",
-        "ref": "main",
-        "rev": "174d97183202aa46b05b533ca4bab9cb33c1ec00",
-        "revCount": 8,
-        "type": "git",
-        "url": "ssh://git@github.com/MIT-Systems-Integration-Development/metis"
-      },
-      "original": {
-        "ref": "main",
-        "type": "git",
-        "url": "ssh://git@github.com/MIT-Systems-Integration-Development/metis"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1771848320,
@@ -72,7 +55,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "metis": "metis",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix"
       }

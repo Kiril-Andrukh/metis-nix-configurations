@@ -18,7 +18,7 @@
 
   home.activation = {
     cloneMetis = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      export GIT_SSH_COMMAND="${pkgs.openssh}/bin/ssh"
+      export GIT_SSH_COMMAND="${pkgs.openssh}/bin/ssh -i /run/secrets/ssh_private_key -o StrictHostKeyChecking=no"
       if [ ! -d "$HOME/metis" ] || [ -L "$HOME/metis" ]; then
         rm -rf "$HOME/metis"
         ${pkgs.git}/bin/git clone git@github.com:MIT-Systems-Integration-Development/metis.git "$HOME/metis"
